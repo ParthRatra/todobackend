@@ -25,4 +25,4 @@ const todoSchema = new mongoose.Schema(
     }
 );
 // shikhelgya is collection ka naam hai jo database mai mongodb compass mai bnega
-module.exports = mongoose.model("shikhelgya", todoSchema);
+module.exports = mongoose.model("shikhelgyas", todoSchema);

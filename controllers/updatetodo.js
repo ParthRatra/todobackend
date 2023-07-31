@@ -10,20 +10,24 @@ const Todo =require('../models/Todo')
 // mera baki code ko affect ho jb tk response aega that's why 
 // hm isme bhi db se interaction mai bhi mai yh bolunga ki mera code execution block na ho 
 
-exports.creating = async(req,res)=>{
+exports.updating = async(req,res)=>{
     try{
-            // extract title and discription from request body
-            const {title,description}=req.body;
-            // create a new Todo obj and insert in db
-            const response =await Todo.create({title,description})
-            // send a json response with a sucess flag 
+        // yh id arhi hogi models/todo se
+           const {id}=req.params;
+           const {title,description}=req.body
+
+           const todo= await Todo.findByIdAndUpdate(
+            {_id:id},
+            // updateAt compaas mai tha vha change hoga
+            {title,description,updateAt:Date.now()}
+           )
 
             res.status(200).json(
                 {
                     // 200 indicates that the request has succeeded
                     success:true,
-                    data:response,
-                    message:'entry created successfully'
+                    data:todo,
+                    message:'update successfully'
                 }
             )
     }

@@ -57,6 +57,7 @@ exports.gettodobyid=async(req,res)=>{
         // .findBYid({id}) krna pdega bs 
         // _id smj jaega vo 
         // agr uske baad bhi mai kr rha hu na tb bhi chlega
+        //_id :id yh tb bhi chljaega
         // _id mongodb compass mai hai
         const todo=await Todo.findById({_id:id})
         if(!todo)

@@ -52,6 +52,9 @@ exports.gettodobyid=async(req,res)=>{
         // extract todo items on the basis of id  
         // yh id fetch krne ka tarika hai
         const  id=req.params.id;
+        // agr mai destructuring krta hu na toh muje
+        // const{id} =req.params
+        // .findBYid({id}) krna pdega bs
         // _id mongodb compass mai hai
         const todo=await Todo.findById({_id:id})
         if(!todo)

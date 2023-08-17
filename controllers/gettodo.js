@@ -54,7 +54,9 @@ exports.gettodobyid=async(req,res)=>{
         const  id=req.params.id;
         // agr mai destructuring krta hu na toh muje
         // const{id} =req.params
-        // .findBYid({id}) krna pdega bs
+        // .findBYid({id}) krna pdega bs 
+        // _id smj jaega vo 
+        // agr uske baad bhi mai kr rha hu na tb bhi chlega
         // _id mongodb compass mai hai
         const todo=await Todo.findById({_id:id})
         if(!todo)

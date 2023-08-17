@@ -16,6 +16,9 @@ exports.updating = async(req,res)=>{
            const {id}=req.params;
            const {title,description}=req.body
 
+
+               // phela vala {} search ka hai aur dusra vala {} update ka hai kya update krna hai and new deta 
+            // hmko updated vala return mai chaiye toh new true krdo
            const todo= await Todo.findByIdAndUpdate(
             {_id:id},
             // updateAt compaas mai tha vha change hoga
